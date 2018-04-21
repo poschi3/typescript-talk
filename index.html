@@ -81,6 +81,13 @@ class: middle, center, inverse
 ---
 ## Einfache Datentypen
 ```typescript
+let hitze: any;
+hitze = 30;
+hitze = "warm";
+hitze = ["warm", 30];
+```
+--
+```typescript
 let isOpen: boolean = true;
 let temperature: number = 23
 let temperatures: number[] = [23, 24, 25];
@@ -94,11 +101,7 @@ let door: DoorStatus = DoorStatus.Open
 ```typescript
 let isOpen = true;
 let temperature = 23
-let temperatures = [23, 24, 25];
 let lastSong = "Rick Astley - Never Gonna Give You Up";
-
-enum DoorStatus {Open, Closed, Defect}
-let door = DoorStatus.Open
 ```
 ---
 ## Variablen Deklaration
