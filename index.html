@@ -89,6 +89,17 @@ let lastSong: string = "Rick Astley - Never Gonna Give You Up";
 enum DoorStatus {Open, Closed, Defect}
 let door: DoorStatus = DoorStatus.Open
 ```
+--
+## Typinferenz
+```typescript
+let isOpen = true;
+let temperature = 23
+let temperatures = [23, 24, 25];
+let lastSong = "Rick Astley - Never Gonna Give You Up";
+
+enum DoorStatus {Open, Closed, Defect}
+let door = DoorStatus.Open
+```
 ---
 ## Variablen Deklaration
 - Variablen können mit `var`, `let` und `const` zugewiesen werden
@@ -159,10 +170,46 @@ I bims!
 10
 ```
 ---
-## Klassen und Interfaces
+## Interfaces - Teil 1
+```typescript
+interface Hacker {
+  nick: string;
+  space: string;
+}
 
+function welcome(hacker: Hacker) {
+  console.log("Hi " + hacker.nick + " vom Space " + hacker.space + "!");
+}
 
+let poschi: Hacker = {
+  nick: "Poschi",
+  space: "K4CG"
+}
 
+welcome(poschi);
+```
+---
+## Interfaces - Teil 2
+```typescript
+interface Hacker {
+  nick: string;
+  space?: string;
+}
+
+function welcome(hacker: Hacker) {
+  if(hacker.space){
+      console.log("Hi " + hacker.nick + " vom Space " + hacker.space + "!");
+  } else {
+      console.log("Hi " + hacker.nick + "!");
+  }
+}
+
+let poschi = {nick: "Poschi", space: "K4CG"};
+let zeitreisender: Hacker = {nick: "Zeitreisender"};
+
+welcome(poschi);
+welcome(zeitreisender);
+```
 ---
 ## Sonstige Datentypen
 ```typescript
@@ -173,9 +220,6 @@ I bims!
 ---
 TODO
 
-- inferencing, 
-  - interfaces, 
-  - strukturell gleich aber nicht identisch
   - Klassen
   - Konstruktor public member generieren
   - overloading geht nicht, union types
