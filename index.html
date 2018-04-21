@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TypeScript aus der Sicht eines Java-Entwicklers</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code {
+         font-family: 'Ubuntu Mono'; 
+         color: #ddd;
+         background: #272822;
+      }
+      .remark-code-line-highlighted {
+         background-color: #373832; 
+      }
+      a {
+        color: black;
+        text-decoration: underline;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: left
+---
+class: middle, center, inverse
+# TypeScript
+## Aus der Sicht eines Java-Entwicklers
+---
+# Agenda
+TODO
+1. Was ist TypeScript?
+1. Wie funktioniert es?
+1. Wobei kann mir TypeScript helfen?
+1. Idee
+1. Hands on
+1. Links
+---
+# Was ist TypeScript?
+- Programmiersprache von Microsoft
+- Superset von JavaScript
+- Statisch typisiertes JavaScirpt
+- TS wird zu JS transpiliert
+- Zugriff auf alles bestehende JavaScript möglich
+---
+# Beispiel mit Typen
+TODO
+---
+class: middle, center, inverse
+# Typsystem
+---
+
+  - inferencing, 
+  - interfaces, 
+  - strukturell gleich aber nicht identisch
+  - Klassen
+  - Konstruktor public member generieren
+  - overloading geht nicht, union types
+  - Typensysteme allgemein. TS: statsich + schwach
+  - generics
+
+TODO
+---
+# Variablen anlegen (var, let, const)
+TODO
+---
+# arrow-function
+- this kapselung
+TODO
+---
+# (Optional name?: string)
+TODO
+---
+# Advanced Typsystem
+- strict null checks
+- union types
+---
+# Partial (Partial (Person))
+  - Tyen verdingeln mit [P in keyof T]?: T[P];
+  TODO
+---
+# module
+TODO
+---
+# async await
+TODO
+---
+# Quickstart
+TODO
+1. TypeScript Compiler installieren:
+```bash
+npm install -g typescript
+```
+1. `start.ts` anlegen
+---
+<!-- https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html -->
+# JavaScript -> TypeScript
+1. tsconfig.json anlegen
+  1. Source definieren
+  1. Out definieren
+1. Eine JS-Datei nach der anderen in TS umwandeln / migrieren
+---
+<!-- https://www.typescriptlang.org/docs/handbook/basic-types.html -->
+# Datentypen
+- Boolean
+- Number
+- String
+- Array
+- Tuple
+- Enum
+- Any
+- Void
+- Null und Undefined
+- *Klassen*
+TODO
+---
+# Variablen Deklaration / Zuweisung
+```typescript
+let name: string;
+name = "K4CG";
+```
+--
+```typescript
+let name: string = "K4CG";
+```
+--
+```typescript
+let name = "K4CG";
+```
+---
+# Geile Features
+- TS-Debugging im Browser
+- Java-Klassen zu TypeScript
+---
+# Weiterführende Links
+- Doku:
+- Ausprobieren:
+  - https://www.typescriptlang.org/play/
+  - https://stackblitz.com/
+---
+# Kontakt
+- Florian Policnik
+- florian@policnik.de
+- [@Poschi3](https://twitter.com/Poschi3)
+    </textarea>
+    <!-- <script src="https://remarkjs.com/downloads/remark-latest.min.js"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        ratio: "4:3",
+        //ratio: "16:9",
+        countIncrementalSlides: false,
+        highlightStyle: 'monokai',
+        highlightLines: true
+      });
+    </script>
+  </body>
+</html>
