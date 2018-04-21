@@ -61,14 +61,119 @@ TODO
 - TS wird zu JS transpiliert
 - Zugriff auf alles bestehende JavaScript möglich
 ---
-# Beispiel mit Typen
-TODO
+# Beispiel
+## JavaScript &amp; TypeScript
+```typescript
+function greet(name) {
+  console.log("Hi " + name + " dein Name hat " + name.length + " Buchstaben!");
+}
+```
+--
+## TypeScript
+```typescript
+function greet(name: string) {
+  console.log("Hi " + name + " dein Name hat " + name.length + " Buchstaben!");
+}
+```
 ---
 class: middle, center, inverse
 # Typsystem
 ---
+## Einfache Datentypen
+```typescript
+let isOpen: boolean = true;
+let temperature: number = 23
+let temperatures: number[] = [23, 24, 25];
+let lastSong: string = "Rick Astley - Never Gonna Give You Up";
 
-  - inferencing, 
+enum DoorStatus {Open, Closed, Defect}
+let door: DoorStatus = DoorStatus.Open
+```
+---
+## Variablen Deklaration
+- Variablen können mit `var`, `let` und `const` zugewiesen werden
+- `var` bindet sich an die Funktion
+- `let` bindet sich an den Block
+- Daher sollte `let` immer bevorzugt werden
+- An vielen Stellen kann `let` durch `const` ersetzt werden
+  - Variable wird dadurch schreibgeschützt
+  - Hilft Fehler zu vermeiden
+  - IDE hilft beim Finden der Stellen
+---
+## Variablen Deklaration
+### `var`-Beispiel
+```typescript
+var i = 10;
+if(i == 10) {
+  for(var i = 0; i < 5; i++){
+    console.log("I bims!");
+  }
+}
+console.log(i);
+```
+Ausgabe:
+```bash
+I bims!
+I bims!
+I bims!
+3
+```
+---
+## Variablen Deklaration
+### `let`-Beispiel
+```typescript
+let i = 10;
+if(i == 10) {
+    for(let i = 0; i < 3; i++){
+        console.log("I bims!");
+    }
+}
+console.log(i);
+
+```
+Ausgabe:
+```bash
+I bims!
+I bims!
+I bims!
+10
+```
+---
+## Variablen Deklaration
+### `const`-Beispiel
+```typescript
+const i = 10;
+if(i == 10) {
+    for(let i = 0; i < 3; i++){
+        console.log("I bims!");
+    }
+}
+console.log(i);
+
+```
+Ausgabe:
+```bash
+I bims!
+I bims!
+I bims!
+10
+```
+---
+## Klassen und Interfaces
+
+
+
+---
+## Sonstige Datentypen
+```typescript
+- Any
+- Void
+- Null und Undefined
+```
+---
+TODO
+
+- inferencing, 
   - interfaces, 
   - strukturell gleich aber nicht identisch
   - Klassen
@@ -77,9 +182,6 @@ class: middle, center, inverse
   - Typensysteme allgemein. TS: statsich + schwach
   - generics
 
-TODO
----
-# Variablen anlegen (var, let, const)
 TODO
 ---
 # arrow-function
@@ -120,10 +222,6 @@ npm install -g typescript
 ---
 <!-- https://www.typescriptlang.org/docs/handbook/basic-types.html -->
 # Datentypen
-- Boolean
-- Number
-- String
-- Array
 - Tuple
 - Enum
 - Any
@@ -149,6 +247,7 @@ let name = "K4CG";
 # Geile Features
 - TS-Debugging im Browser
 - Java-Klassen zu TypeScript
+- Exit Strategie
 ---
 # Weiterführende Links
 - Doku:
