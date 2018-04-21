@@ -5,7 +5,10 @@
         "sourceMap": true,
 
         "noImplicitAny": true,
+        "strictNullChecks": true,
         "strict": true,
-        "strictNullChecks": true
-    }
+    },
+    "include": [
+        "src/**/*"
+    ],
 }
