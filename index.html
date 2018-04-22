@@ -214,6 +214,87 @@ welcome(poschi);
 welcome(zeitreisender);
 ```
 ---
+## Klassen - Teil 1
+```typescript
+class Rezeptionistin {
+  channel: string;
+
+  constructor(channel: string) {
+      this.channel = channel;
+  }
+
+  temp() : number {
+      return 23;
+  }
+
+  postStatus() : void {
+      console.log(this.channel + ": " + this.temp() + "°C");
+  }
+}
+
+let rezeptionistin = new Rezeptionistin("K4CG");
+rezeptionistin.postStatus();
+```
+---
+## Klassen - Teil 2
+```typescript
+class Rezeptionistin {
+  constructor(private channel: string) { }
+
+  temp() : number {
+      return 23;
+  }
+
+  postStatus() : void {
+      console.log(this.channel + ": " + this.temp() + "°C");
+  }
+}
+
+let rezeptionistin = new Rezeptionistin("K4CG");
+rezeptionistin.postStatus();
+```
+---
+## Klassen - Teil 3
+```typescript
+interface Hacker {
+  sayHello(): void;
+}
+
+class NormaloHacker implements Hacker {
+  constructor(private nick: string) { }
+  sayHello(): void {
+      console.log("Hallo ich bins der " + this.nick);
+  }
+}
+
+let zeitreisender = new NormaloHacker("Zeitreisender");
+zeitreisender.sayHello();
+```
+---
+## Klassen - Teil 4
+```typescript
+interface Hacker {sayHello(): void;}
+
+class NormaloHacker implements Hacker {
+    constructor(private nick: string) { }
+    sayHello(): void {
+        console.log("Hallo ich bins der " + this.nick);
+    }
+}
+
+class Poschi extends NormaloHacker {
+    constructor() {
+        super("Poschi");
+    }
+    sayHello(): void {
+        console.log("I bims der Flo");
+    }
+}
+
+let poschi = new Poschi();
+poschi.sayHello();
+```
+---
 ## Sonstige Datentypen
 ```typescript
 - Any
@@ -222,9 +303,6 @@ welcome(zeitreisender);
 ```
 ---
 TODO
-
-  - Klassen
-  - Konstruktor public member generieren
   - overloading geht nicht, union types
   - Typensysteme allgemein. TS: statsich + schwach
   - generics
