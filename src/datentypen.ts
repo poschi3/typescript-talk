@@ -8,3 +8,9 @@ let lastSong: string = "Rick Astley - Never Gonna Give You Up";
 
 enum DoorStatus {Open, Closed, Defect}
 let door: DoorStatus = DoorStatus.Open
+
+let serverResponse: string | number | undefined;
+serverResponse = "OK";
+serverResponse = 200;
+serverResponse = undefined;
+

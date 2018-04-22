@@ -81,13 +81,6 @@ class: middle, center, inverse
 ---
 ## Einfache Datentypen
 ```typescript
-let hitze: any;
-hitze = 30;
-hitze = "warm";
-hitze = ["warm", 30];
-```
---
-```typescript
 let isOpen: boolean = true;
 let temperature: number = 23
 let temperatures: number[] = [23, 24, 25];
@@ -98,10 +91,34 @@ let door: DoorStatus = DoorStatus.Open
 ```
 --
 ## Typinferenz
+Was klar ist, ist klar
 ```typescript
 let isOpen = true;
 let temperature = 23
 let lastSong = "Rick Astley - Never Gonna Give You Up";
+
+enum DoorStatus {Open, Closed, Defect}
+let door = DoorStatus.Open
+```
+---
+## Any
+Oder: Ich hab die Kontrolle über meinen Code verloren
+
+```typescript
+let hitze: any;
+hitze = 30;
+hitze = "warm";
+hitze = ["warm", 30];
+hitze = ["warm", 30, new Hacker("Poschi")];
+```
+--
+## Union Types
+Alle Schäfchen beisammen halten
+```typescript
+let serverResponse: string | number | undefined;
+serverResponse = "OK";
+serverResponse = 200;
+serverResponse = undefined;
 ```
 ---
 ## Variablen Deklaration
@@ -115,13 +132,13 @@ let lastSong = "Rick Astley - Never Gonna Give You Up";
   - IDE hilft beim Finden der Stellen
 ---
 ## Variablen Deklaration
-### `var`-Beispiel
+Beispiel mit `var`:
 ```typescript
 var i = 10;
 if(i == 10) {
-  for(var i = 0; i < 5; i++){
-    console.log("I bims!");
-  }
+    for(var i = 0; i < 5; i++){
+        console.log("I bims!");
+    }
 }
 console.log(i);
 ```
@@ -134,7 +151,7 @@ I bims!
 ```
 ---
 ## Variablen Deklaration
-### `let`-Beispiel
+Beispiel mit `let`:
 ```typescript
 let i = 10;
 if(i == 10) {
@@ -154,7 +171,7 @@ I bims!
 ```
 ---
 ## Variablen Deklaration
-### `const`-Beispiel
+Beispiel mit `const`:
 ```typescript
 const i = 10;
 if(i == 10) {
@@ -295,13 +312,6 @@ let poschi = new Poschi();
 poschi.sayHello();
 ```
 ---
-## Sonstige Datentypen
-```typescript
-- Any
-- Void
-- Null und Undefined
-```
----
 TODO
   - overloading geht nicht, union types
   - Typensysteme allgemein. TS: statsich + schwach
@@ -313,18 +323,10 @@ TODO
 - this kapselung
 TODO
 ---
-# (Optional name?: string)
-TODO
----
 # Advanced Typsystem
 - strict null checks
-- union types
 ---
-# Partial (Partial (Person))
-  - Tyen verdingeln mit [P in keyof T]?: T[P];
-  TODO
----
-# module
+# Module und Namespaces
 TODO
 ---
 # async await
@@ -345,40 +347,24 @@ npm install -g typescript
   1. Out definieren
 1. Eine JS-Datei nach der anderen in TS umwandeln / migrieren
 ---
-<!-- https://www.typescriptlang.org/docs/handbook/basic-types.html -->
-# Datentypen
-- Tuple
-- Enum
-- Any
-- Void
-- Null und Undefined
-- *Klassen*
-TODO
----
-# Variablen Deklaration / Zuweisung
-```typescript
-let name: string;
-name = "K4CG";
-```
---
-```typescript
-let name: string = "K4CG";
-```
---
-```typescript
-let name = "K4CG";
-```
----
 # Geile Features
 - TS-Debugging im Browser
 - Java-Klassen zu TypeScript
 - Exit Strategie
+- Declaration Files
 ---
 # Weiterführende Links
-- Doku:
+- Dokumentation:
+  - [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+  - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+  - [Migrating from JavaScript](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
 - Ausprobieren:
-  - https://www.typescriptlang.org/play/
-  - https://stackblitz.com/
+  - [TypeScript Play](https://www.typescriptlang.org/play/)
+  - VS-Code im Web [Stackblitz](https://stackblitz.com/)
+- Videos:
+  - [JavaScript-Fuckups](https://www.destroyallsoftware.com/talks/wat)
+  - [Endlich sauberer Code im Frontend](https://media.ccc.de/v/froscon2017-2028-typescript_-_endlich_sauberer_code_im_frontend)
+
 ---
 # Kontakt
 - Florian Policnik
