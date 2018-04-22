@@ -60,13 +60,12 @@ class: middle, center, inverse
 ## Aus der Sicht eines Java-Entwicklers
 ---
 # Agenda
-TODO
 1. Was ist TypeScript?
-1. Wie funktioniert es?
-1. Wobei kann mir TypeScript helfen?
-1. Idee
-1. Hands on
-1. Links
+1. Typsystem
+1. Beispiele
+1. Quickstart
+1. Fazit
+1. Experimente
 ---
 # Was ist TypeScript?
 <img src="ts-community-logo.svg" alt="Smiley face" width="200" align="right" alt="TS Community Logo" />
@@ -208,99 +207,99 @@ I bims!
 ## Interfaces - Teil 1
 ```typescript
 interface Hacker {
-  nick: string;
-  space: string;
+    nick: string;
+    space: string;
 }
 
 function welcome(hacker: Hacker) {
-  console.log("Hi " + hacker.nick + " vom Space " + hacker.space + "!");
+    console.log("Hi " + hacker.nick + " vom Space " + hacker.space + "!");
 }
 
 let poschi: Hacker = {
-  nick: "Poschi",
-  space: "K4CG"
-}
+    nick: "Poschi",
+    space: "K4CG"
+};
 
-welcome(poschi);
+welcome(poschi); // Hi Poschi vom Space K4CG!
 ```
 ---
 ## Interfaces - Teil 2
 ```typescript
 interface Hacker {
-  nick: string;
-  space?: string;
+    nick: string;
+    space?: string;
 }
 
 function welcome(hacker: Hacker) {
-  if(hacker.space){
-      console.log("Hi " + hacker.nick + " vom Space " + hacker.space + "!");
-  } else {
-      console.log("Hi " + hacker.nick + "!");
-  }
+    if(hacker.space){
+        console.log("Hi " + hacker.nick + " vom Space " + hacker.space + "!");
+    } else {
+        console.log("Hi " + hacker.nick + "!");
+    }
 }
 
-let poschi = {nick: "Poschi", space: "K4CG"};
+let poschi: Hacker = {nick: "Poschi", space: "K4CG"};
 let zeitreisender: Hacker = {nick: "Zeitreisender"};
 
-welcome(poschi);
-welcome(zeitreisender);
+welcome(poschi); // Hi Poschi vom Space K4CG!
+welcome(zeitreisender); // Hi Zeitreisender!
 ```
 ---
 ## Klassen - Teil 1
 ```typescript
 class Rezeptionistin {
-  channel: string;
+    channel: string;
 
-  constructor(channel: string) {
-      this.channel = channel;
-  }
+    constructor(channel: string) {
+        this.channel = channel;
+    }
 
-  temp() : number {
-      return 23;
-  }
+    temp() : number {
+        return 23;
+    }
 
-  postStatus() : void {
-      console.log(this.channel + ": " + this.temp() + "°C");
-  }
+    postStatus() : void {
+        console.log(this.channel + ": " + this.temp() + "°C");
+    }
 }
 
 let rezeptionistin = new Rezeptionistin("K4CG");
-rezeptionistin.postStatus();
+rezeptionistin.postStatus(); // K4CG: 23°C
 ```
 ---
 ## Klassen - Teil 2
 ```typescript
 class Rezeptionistin {
-  constructor(private channel: string) { }
+    constructor(private channel: string) { }
 
-  temp() : number {
-      return 23;
-  }
+    temp() : number {
+        return 23;
+    }
 
-  postStatus() : void {
-      console.log(this.channel + ": " + this.temp() + "°C");
-  }
+    postStatus() : void {
+        console.log(this.channel + ": " + this.temp() + "°C");
+    }
 }
 
 let rezeptionistin = new Rezeptionistin("K4CG");
-rezeptionistin.postStatus();
+rezeptionistin.postStatus(); // K4CG: 23°C
 ```
 ---
 ## Klassen - Teil 3
 ```typescript
 interface Hacker {
-  sayHello(): void;
+    sayHello(): void;
 }
 
 class NormaloHacker implements Hacker {
-  constructor(private nick: string) { }
-  sayHello(): void {
-      console.log("Hallo ich bins der " + this.nick);
-  }
+    constructor(private nick: string) { }
+    sayHello(): void {
+        console.log("Hallo ich bins der " + this.nick);
+    }
 }
 
 let zeitreisender = new NormaloHacker("Zeitreisender");
-zeitreisender.sayHello();
+zeitreisender.sayHello(); // Hallo ich bins der Zeitreisender
 ```
 ---
 ## Klassen - Teil 4
@@ -324,7 +323,7 @@ class Poschi extends NormaloHacker {
 }
 
 let poschi = new Poschi();
-poschi.sayHello();
+poschi.sayHello(); // I bims der Flo
 ```
 ---
 # `this` vs. `_this` - Teil 1
@@ -342,6 +341,11 @@ class Hackerspace {
 
 const space = new Hackerspace("K4CG", ["Poschi", "Zeitreisender"]);
 space.greetAll();
+```
+--
+```markdown
+Poschi in undefined
+Zeitreisender in undefined
 ```
 ---
 # `this` vs. `_this` - Teil 2
@@ -361,9 +365,14 @@ class Hackerspace {
 const space = new Hackerspace("K4CG", ["Poschi", "Zeitreisender"]);
 space.greetAll();
 ```
+```markdown
+Poschi in K4CG
+Zeitreisender in K4CG
+```
 Aber das ist unschön und fehleranfällig
 ---
 # Arrow-Functions
+Arrow-Functions lösen das Problem sehr schön:
 ```typescript```
 class Hackerspace {
     constructor(private name: string, private users: string[]) { }
@@ -378,9 +387,10 @@ class Hackerspace {
 const space = new Hackerspace("K4CG", ["Poschi", "Zeitreisender"]);
 space.greetAll();
 ```
----
-# Advanced Typsystem
-- strict null checks
+```markdown
+Poschi in K4CG
+Zeitreisender in K4CG
+```
 ---
 # Namespaces
 ```typescript
@@ -431,7 +441,6 @@ export interface Status {
 ```
 ]
 ]
---
 .bottom[
 code.ts
 ```typescript
@@ -444,25 +453,28 @@ let mqttStatus: MqttStatus = {channel: "k4cg", temp: 23};
 ]
 ---
 # Quickstart
-TODO
 1. TypeScript Compiler installieren:
 ```bash
 npm install -g typescript
 ```
-1. `start.ts` anlegen
+1. Projekt in `tsconfig.json` definieren
+1. `example.ts` anlegen
+1. Kompilieren (`tsc`)
+1. Schönen Code schreiben ;-)
+
+Alternativ: Mit [Stackblitz](https://stackblitz.com/) im Browser experimentieren
 ---
-<!-- https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html -->
-# JavaScript -> TypeScript
-1. tsconfig.json anlegen
-  1. Source definieren
-  1. Out definieren
-1. Eine JS-Datei nach der anderen in TS umwandeln / migrieren
----
-# Geile Features
-- TS-Debugging im Browser
-- Java-Klassen zu TypeScript
-- Exit Strategie
-- Declaration Files
+# Fazit
+- Moderne JavaScript-Feautres schon heute nutzen
+- Typsystem das viele Fehler gar nicht erst zu lässt
+- Sehr gute IDE-Unterstützung
+- Weitere Features:
+  - TSLint findet weitere Fehler
+  - Debugging von TypeScript im Browser möglich
+  - TypeScript Kompilat mit Webpack Packen
+  - Java-Klassen zu TypeScript kompilieren
+  - Exit Strategie
+  - Declaration Files ermöglichen typisierten Zugriff auf legacy JavaScript-Bibliotheken
 ---
 # Weiterführende Links
 - Dokumentation:
@@ -477,12 +489,10 @@ npm install -g typescript
   - [Endlich sauberer Code im Frontend](https://media.ccc.de/v/froscon2017-2028-typescript_-_endlich_sauberer_code_im_frontend)
 
 ---
+class: middle, center, inverse
 # Vielen Dank!
-# Fragen?
-# Kontakt
-- Florian Policnik
-- florian@policnik.de
-- [@Poschi3](https://twitter.com/Poschi3)
+## Fragen?
+## Experimente!
     </textarea>
     <!-- <script src="https://remarkjs.com/downloads/remark-latest.min.js"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">

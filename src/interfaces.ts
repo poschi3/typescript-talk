@@ -13,7 +13,7 @@ namespace interfaces1 {
         space: "K4CG"
     };
 
-    welcome(poschi);
+    welcome(poschi); // Hi Poschi vom Space K4CG!
 }
 
 namespace interfaces2 {
@@ -28,12 +28,11 @@ namespace interfaces2 {
         } else {
             console.log("Hi " + hacker.nick + "!");
         }
-
     }
 
     let poschi: Hacker = {nick: "Poschi", space: "K4CG"};
     let zeitreisender: Hacker = {nick: "Zeitreisender"};
 
-    welcome(poschi);
-    welcome(zeitreisender);
+    welcome(poschi); // Hi Poschi vom Space K4CG!
+    welcome(zeitreisender); // Hi Zeitreisender!
 }

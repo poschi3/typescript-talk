@@ -16,10 +16,8 @@ namespace classes1 {
     }
 
     let rezeptionistin = new Rezeptionistin("K4CG");
-    rezeptionistin.postStatus();
+    rezeptionistin.postStatus(); // K4CG: 23°C
 }
-
-
 
 namespace classes2 {
     class Rezeptionistin {
@@ -35,7 +33,7 @@ namespace classes2 {
     }
 
     let rezeptionistin = new Rezeptionistin("K4CG");
-    rezeptionistin.postStatus();
+    rezeptionistin.postStatus(); // K4CG: 23°C
 }
 
 namespace classes3 {
@@ -51,8 +49,7 @@ namespace classes3 {
     }
 
     let zeitreisender = new NormaloHacker("Zeitreisender");
-    zeitreisender.sayHello();
-   
+    zeitreisender.sayHello(); // Hallo ich bins der Zeitreisender
 }
 
 
@@ -76,5 +73,5 @@ namespace classes4 {
     }
 
     let poschi = new Poschi();
-    poschi.sayHello();
+    poschi.sayHello(); // I bims der Flo
 }
