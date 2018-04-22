@@ -34,6 +34,20 @@
         color: #f3f3f3;
         line-height: 0.8em;
       }
+
+      /* Two-column layout */
+      .left-column {
+        width: 45%;
+        float: left;
+      }
+      .right-column {
+        width: 45%;
+        float: right;
+      }
+      .bottom {
+        float: left;
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -368,11 +382,66 @@ space.greetAll();
 # Advanced Typsystem
 - strict null checks
 ---
-# Module und Namespaces
-TODO
+# Namespaces
+```typescript
+namespace k4cg.webserver {
+    export interface Status {
+        temp: number;
+        isOpen: boolean;
+    }
+}
+
+namespace k4cg.mqtt {
+    export interface Status {
+        channel: string;
+        temp: number;
+    }
+}
+
+let wsStatus: k4cg.webserver.Status = {
+    temp: 23,
+    isOpen: true
+};
+
+let mqttStatus: k4cg.mqtt.Status = {
+    channel: "k4cg",
+    temp: 23
+}
+```
 ---
-# async await
-TODO
+# Modules
+.top[
+.left-column[
+webserver.ts
+```typescript
+export interface Status {
+    temp: number;
+    isOpen: boolean;
+}
+```
+]
+
+.right-column[
+mqtt.ts
+```typescript
+export interface Status {
+    channel: string;
+    temp: number;
+}
+```
+]
+]
+--
+.bottom[
+code.ts
+```typescript
+import { Status as WsStatus } from "./webserver";
+import { Status as MqttStatus } from "./mqtt";
+
+let wsStatus: WsStatus = {temp: 23, isOpen: true};
+let mqttStatus: MqttStatus = {channel: "k4cg", temp: 23};
+```
+]
 ---
 # Quickstart
 TODO
