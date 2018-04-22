@@ -7,7 +7,7 @@ class Hackerspace {
     }
 
     // public greetAll(){
-    //     const _this = this;
+    //     var _this = this;
     //     this.users.forEach(function(user: string) {
     //         console.log(user + " in " + _this.name);
     //     });

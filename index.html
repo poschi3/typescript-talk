@@ -68,12 +68,16 @@ class: middle, center, inverse
 1. Experimente
 ---
 # Was ist TypeScript?
-<img src="ts-community-logo.svg" alt="Smiley face" width="200" align="right" alt="TS Community Logo" />
+<img src="ts-community-logo.svg" alt="Smiley face" width="100" align="right" alt="TS Community Logo" />
 - Entwickelt von Microsoft
-- Superset von JavaScript
 - Statisch typisiertes JavaScirpt
+- Superset von JavaScript
 - TypeScript wird zu JavaScript transpiliert
+- Benötigt keine Runtime
+- ECMAScript-Version wählbar
 - Zugriff auf alle bestehenden JavaScript-Elemente möglich
+<br /><br /><br />
+.footer[![Workflow](images/workflow.svg)]
 ---
 # Beispiel
 ## JavaScript &amp; TypeScript
@@ -96,7 +100,7 @@ class: middle, center, inverse
 ## Einfache Datentypen
 ```typescript
 let isOpen: boolean = true;
-let temperature: number = 23
+let temperature: number = 23;
 let temperatures: number[] = [23, 24, 25];
 let lastSong: string = "Rick Astley - Never Gonna Give You Up";
 
@@ -355,7 +359,7 @@ class Hackerspace {
     constructor(private name: string, private users: string[]) { }
 
     public greetAll(){
-        const _this = this;
+        var _this = this;
         this.users.forEach(function(user: string) {
             console.log(user + " in " + _this.name);
         });
@@ -473,8 +477,8 @@ Alternativ: Mit [Stackblitz](https://stackblitz.com/) im Browser experimentieren
   - Debugging von TypeScript im Browser möglich
   - TypeScript Kompilat mit Webpack Packen
   - Java-Klassen zu TypeScript kompilieren
-  - Exit Strategie
   - Declaration Files ermöglichen typisierten Zugriff auf legacy JavaScript-Bibliotheken
+  - Exit Strategie
 ---
 # Weiterführende Links
 - Dokumentation:
