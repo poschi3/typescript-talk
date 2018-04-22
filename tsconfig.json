@@ -4,9 +4,16 @@
         "target": "es5",
         "sourceMap": true,
 
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "strict": true,
+        // "noImplicitAny": true,
+        // "strictNullChecks": true,
+        // "strict": true,
+        // "alwaysStrict": true,
+
+        // "noFallthroughCasesInSwitch": true,
+        // "noImplicitThis": true,
+        // "noImplicitReturns": true,
+        // "noUnusedLocals": true,
+        // "noUnusedParameters": true,
     },
     "include": [
         "src/**/*"
