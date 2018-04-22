@@ -1,3 +1,10 @@
 {
-    
+    "defaultSeverity": "warning",
+    "rules": {
+        "max-line-length": {
+            "options": [120]
+        }
+    },
+    "jsRules": {
+    }
 }
