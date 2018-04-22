@@ -55,11 +55,12 @@ TODO
 1. Links
 ---
 # Was ist TypeScript?
-- Programmiersprache von Microsoft
+<img src="ts-community-logo.svg" alt="Smiley face" width="200" align="right" alt="TS Community Logo" />
+- Entwickelt von Microsoft
 - Superset von JavaScript
 - Statisch typisiertes JavaScirpt
-- TS wird zu JS transpiliert
-- Zugriff auf alles bestehende JavaScript möglich
+- TypeScript wird zu JavaScript transpiliert
+- Zugriff auf alle bestehenden JavaScript-Elemente möglich
 ---
 # Beispiel
 ## JavaScript &amp; TypeScript
@@ -136,7 +137,7 @@ Beispiel mit `var`:
 ```typescript
 var i = 10;
 if(i == 10) {
-    for(var i = 0; i < 5; i++){
+    for(var i = 0; i < 3; i++){
         console.log("I bims!");
     }
 }
@@ -312,16 +313,57 @@ let poschi = new Poschi();
 poschi.sayHello();
 ```
 ---
-TODO
-  - overloading geht nicht, union types
-  - Typensysteme allgemein. TS: statsich + schwach
-  - generics
+# `this` vs. `_this` - Teil 1
+`this` ist immer der Aufrufer, das macht Probleme:
+```typescript```
+class Hackerspace {
+    constructor(private name: string, private users: string[]) { }
 
-TODO
+    public greetAll(){
+        this.users.forEach(function(user: string) {
+            console.log(user + " in " + this.name); // Error
+        });
+    }
+}
+
+const space = new Hackerspace("K4CG", ["Poschi", "Zeitreisender"]);
+space.greetAll();
+```
 ---
-# arrow-function
-- this kapselung
-TODO
+# `this` vs. `_this` - Teil 2
+Deswegen muss man `this` in `_this` speichern:
+```typescript```
+class Hackerspace {
+    constructor(private name: string, private users: string[]) { }
+
+    public greetAll(){
+        const _this = this;
+        this.users.forEach(function(user: string) {
+            console.log(user + " in " + _this.name);
+        });
+    }
+}
+
+const space = new Hackerspace("K4CG", ["Poschi", "Zeitreisender"]);
+space.greetAll();
+```
+Aber das ist unschön und fehleranfällig
+---
+# Arrow-Functions
+```typescript```
+class Hackerspace {
+    constructor(private name: string, private users: string[]) { }
+
+    public greetAll(){
+        this.users.forEach((user) => {
+            console.log(user + " in " + this.name);
+        });
+    }
+}
+
+const space = new Hackerspace("K4CG", ["Poschi", "Zeitreisender"]);
+space.greetAll();
+```
 ---
 # Advanced Typsystem
 - strict null checks
@@ -366,6 +408,8 @@ npm install -g typescript
   - [Endlich sauberer Code im Frontend](https://media.ccc.de/v/froscon2017-2028-typescript_-_endlich_sauberer_code_im_frontend)
 
 ---
+# Vielen Dank!
+# Fragen?
 # Kontakt
 - Florian Policnik
 - florian@policnik.de
