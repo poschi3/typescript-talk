@@ -37,7 +37,9 @@
         color: #f3f3f3;
         line-height: 0.8em;
       }
-
+      .highlight {
+        color: rgb(249, 38, 114);
+      }
       /* Two-column layout */
       .left-column {
         width: 45%;
@@ -471,19 +473,27 @@ npm install -g typescript
 
 Alternativ: Mit [Stackblitz](https://stackblitz.com/) im Browser experimentieren
 ---
+class: middle, center, inverse
+# .highlight[*N*] &nbsp; more things...
+---
+# Da geht noch was!
+- TSLint findet weitere Fehler
+- Debugging von TypeScript im Browser möglich
+- TypeScript Kompilat mit Webpack packen
+- Java-Klassen zu TypeScript kompilieren
+- Declaration Files ermöglichen typisierten Zugriff auf legacy JavaScript-Bibliotheken
+- Exit Strategie
+- ...
+---
 # Fazit
 - Moderne JavaScript-Feautres schon heute nutzen
 - Typsystem das viele Fehler gar nicht erst zu lässt
+- Schritt für Schritt Migration möglich und sinnvoll
+- Viele Fehlermeldungen am Anfang gewöhnungsbedürftig
 - Sehr gute IDE-Unterstützung
-- Weitere Features:
-  - TSLint findet weitere Fehler
-  - Debugging von TypeScript im Browser möglich
-  - TypeScript Kompilat mit Webpack Packen
-  - Java-Klassen zu TypeScript kompilieren
-  - Declaration Files ermöglichen typisierten Zugriff auf legacy JavaScript-Bibliotheken
-  - Exit Strategie
+- TypeScript is love <3
 ---
-# Weiterführende Links
+# Noch mehr Infos!
 - Dokumentation:
   - [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
   - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
@@ -502,13 +512,14 @@ class: middle, center, inverse
 ## Experimente!
 https://stackblitz.com/edit/typescript-k4cg
     </textarea>
-    <!-- <script src="https://remarkjs.com/downloads/remark-latest.min.js"> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js">
-    </script>
+    <!-- <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js"></script>
+    <!-- <script src="remark.min.js"></script> -->
     <script>
       var slideshow = remark.create({
-        ratio: "4:3",
+        //ratio: "4:3",
         //ratio: "16:9",
+        ratio: "16:10",
         countIncrementalSlides: false,
         highlightStyle: 'monokai',
         highlightLines: true
