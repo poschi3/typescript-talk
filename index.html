@@ -50,11 +50,11 @@
       }
       /* Two-column layout */
       .left-column {
-        width: 45%;
+        width: 48%;
         float: left;
       }
       .right-column {
-        width: 45%;
+        width: 48%;
         float: right;
       }
       .bottom {
@@ -517,11 +517,14 @@ class: middle, center, inverse
 # .highlight[*N*] &nbsp; more things...
 ---
 # Da geht noch was!
-- TSLint findet weitere Fehler
-- Debugging von TypeScript im Browser möglich
-- TypeScript Kompilat mit Webpack packen
-- Java-Klassen zu TypeScript kompilieren
-- Declaration Files ermöglichen typisierten Zugriff auf legacy JavaScript-Bibliotheken
+- [TSLint](https://palantir.github.io/tslint/) findet weitere Fehler
+- TypeScript-Debugging im Browser
+- TypeScript mit Webpack packen
+- [Java zu TypeScript](https://github.com/vojtechhabarta/typescript-generator)  
+- [TypeScript Deklarationen](https://microsoft.github.io/TypeSearch/) für JavaScript-Bibliotheken 
+```bash
+npm install --save-dev @types/lodash
+```
 - Exit Strategie
 - ...
 ---
@@ -531,7 +534,7 @@ class: middle, center, inverse
 - Schritt für Schritt Migration möglich und sinnvoll
 - Viele Fehlermeldungen am Anfang gewöhnungsbedürftig
 - Sehr gute IDE-Unterstützung
-- TypeScript is love <3
+- TypeScript is love &hearts;
 ---
 # Noch mehr Infos!
 - Dokumentation:
@@ -551,6 +554,54 @@ class: middle, center, inverse
 ## Fragen?
 ## Experimente!
 https://stackblitz.com/edit/typescript-k4cg
+---
+# Java zu TypeScript
+.left-column[
+```java
+public class Person {
+    public String name;
+    public int age;
+    public List<String> tags;
+    public Map<String, String> emails;
+}
+
+@Path("people/{personId}")
+private static class PersonResource {
+    @PathParam("personId")
+    protected long personId;
+
+    @GET
+    public Person getPerson() {
+        return null;
+    }
+}
+```
+]
+.right-column[
+```typescript
+interface Person {
+    name: string;
+    age: number;
+    tags: string[];
+    emails: { [index: string]: string };
+}
+
+class RestApplicationClient {
+    constructor(
+        private httpClient: HttpClient
+    ) {
+    }
+
+    getPerson(personId: number): 
+      RestResponse<Person> {
+        return this.httpClient.request({
+            method: "GET", 
+            url: `api/people/${personId}` 
+        });
+    }
+}
+```
+]
     </textarea>
     <!-- <script src="https://remarkjs.com/downloads/remark-latest.js"></script> -->
     <script src="remark.js"></script>
