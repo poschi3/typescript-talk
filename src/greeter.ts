@@ -1,4 +1,4 @@
-function greet(name) {
+function greet(name) { // string | string[] | nuber
     console.log("Hi " + name + " dein Name hat " + name.length + " Buchstaben!");
 }
 
