@@ -13,10 +13,18 @@
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
-      .remark-code, .remark-inline-code {
+      code {
+          border-radius: 5px;
+      }
+      .remark-code {
          font-family: 'Ubuntu Mono'; 
          color: #ddd;
          background: #272822;
+      }
+      .remark-inline-code {
+         font-family: 'Ubuntu Mono';
+         /* color: #ddd; */
+         background: #e7e8e2; 
       }
       .remark-code-line-highlighted {
          background-color: #373832; 
@@ -163,14 +171,19 @@ serverResponse = undefined;
 ```
 ---
 ## Variablen Deklaration
-- Variablen können mit `var`, `let` und `const` zugewiesen werden
-- `var` bindet sich an die Funktion
-- `let` bindet sich an den Block
-- Daher sollte `let` immer bevorzugt werden
-- An vielen Stellen kann `let` durch `const` ersetzt werden
-  - Variable wird dadurch schreibgeschützt
-  - Hilft Fehler zu vermeiden
-  - IDE hilft beim Finden der Stellen
+- Deklaration mit `var`, `let` und `const` möglich
+
+- `var` vs. `let`:
+  - `var` bindet sich an die Funktion
+  - `let` bindet sich an den Block
+  - &#x21E8; `let` immer bevorzugt
+
+- `let` vs. `const`:
+  - `const` bindet sich auch an Block
+  -  Wert kann aber nicht mehr überschrieben werden
+  - &#x21E8; bevorzugen wenn möglich / sinnvoll
+      - Vermeidet Fehler
+      - IDE hilft beim Finden der Stellen
 ---
 ## Variablen Deklaration
 Beispiel mit `var`:
