@@ -73,5 +73,5 @@ namespace classes4 {
     }
 
     let poschi = new Poschi();
-    poschi.sayHello(); // I bims der Flo
+    poschi.sayHello(); // Grüß Gott ich bin der Flo!
 }
