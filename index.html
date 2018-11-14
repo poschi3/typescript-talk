@@ -498,16 +498,20 @@ let mqttStatus: MqttStatus = {channel: "k4cg", temp: 23};
 ]
 ---
 # Quickstart
-1. TypeScript Compiler installieren:
+1. Node installieren
+1. TypeScript Umgebung aufsetzen:
 ```bash
-npm install -g typescript
+npm install -g typescript    # TypeScript installieren
+tsc --init                   # tsconfig.json anlegen
+echo "console.log('Hello World');" > index.ts
+tsc                          # TypeScript zu JavaScript Kompilieren
+node index.js                # JavaScript Ausführen
+Hello World
 ```
-1. Projekt in `tsconfig.json` definieren
-1. `example.ts` anlegen
-1. Kompilieren (`tsc`)
-1. Schönen Code schreiben ;-)
+1. Glücklich sein .highlight[&hearts;]
 
-Alternativ: Mit [Stackblitz](https://stackblitz.com/) im Browser experimentieren
+## Alternativ:
+Mit [Stackblitz](https://stackblitz.com/) im Browser experimentieren
 ---
 class: middle, center, inverse
 # .highlight[*N*] &nbsp; more things...
