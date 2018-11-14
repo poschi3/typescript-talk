@@ -189,18 +189,20 @@ serverResponse = undefined;
 Beispiel mit `var`:
 ```typescript
 var i = 10;
+console.log(i);
 if(i == 10) {
     for(var i = 0; i < 3; i++){
-        console.log("I bims!");
+        console.log("Runde: " + i);
     }
 }
 console.log(i);
 ```
 Ausgabe:
 ```bash
-I bims!
-I bims!
-I bims!
+10
+Runde: 0
+Runde: 1
+Runde: 2
 3
 ```
 ---
@@ -208,19 +210,20 @@ I bims!
 Beispiel mit `let`:
 ```typescript
 let i = 10;
+console.log(i);
 if(i == 10) {
     for(let i = 0; i < 3; i++){
-        console.log("I bims!");
+        console.log("Runde: " + i);
     }
 }
 console.log(i);
-
 ```
 Ausgabe:
 ```bash
-I bims!
-I bims!
-I bims!
+10
+Runde: 0
+Runde: 1
+Runde: 2
 10
 ```
 ---
@@ -228,9 +231,10 @@ I bims!
 Beispiel mit `const`:
 ```typescript
 const i = 10;
+console.log(i);
 if(i == 10) {
     for(let i = 0; i < 3; i++){
-        console.log("I bims!");
+        console.log("Runde: " + i);
     }
 }
 console.log(i);
@@ -238,9 +242,10 @@ console.log(i);
 ```
 Ausgabe:
 ```bash
-I bims!
-I bims!
-I bims!
+10
+Runde: 0
+Runde: 1
+Runde: 2
 10
 ```
 ---
