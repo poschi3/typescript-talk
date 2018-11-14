@@ -1,9 +1,9 @@
 namespace classes1 {
-    class Rezeptionistin {
-        channel: string;
+    class Thermometer {
+        location: string;
 
-        constructor(channel: string) {
-            this.channel = channel;
+        constructor(location: string) {
+            this.location = location;
         }
 
         temp() : number {
@@ -11,29 +11,29 @@ namespace classes1 {
         }
 
         postStatus() : void {
-            console.log(this.channel + ": " + this.temp() + "°C");
+            console.log(this.location + ": " + this.temp() + "°C");
         }
     }
 
-    let rezeptionistin = new Rezeptionistin("K4CG");
-    rezeptionistin.postStatus(); // K4CG: 23°C
+    let thermometer = new Thermometer("K4CG");
+    thermometer.postStatus(); // K4CG: 23°C
 }
 
 namespace classes2 {
-    class Rezeptionistin {
-        constructor(private channel: string) { }
+    class Thermometer {
+        constructor(private location: string) { }
 
         temp() : number {
             return 23;
         }
 
         postStatus() : void {
-            console.log(this.channel + ": " + this.temp() + "°C");
+            console.log(this.location + ": " + this.temp() + "°C");
         }
     }
 
-    let rezeptionistin = new Rezeptionistin("K4CG");
-    rezeptionistin.postStatus(); // K4CG: 23°C
+    let thermometer = new Thermometer("K4CG");
+    thermometer.postStatus(); // K4CG: 23°C
 }
 
 namespace classes3 {
