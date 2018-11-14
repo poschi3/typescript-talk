@@ -41,34 +41,34 @@ namespace classes3 {
         sayHello(): void;
     }
 
-    class NormaloHacker implements Hacker {
+    class SimpleHacker implements Hacker {
         constructor(private nick: string) { }
         sayHello(): void {
-            console.log("Hallo ich bins der " + this.nick);
+            console.log("Hallo ich bin " + this.nick);
         }
     }
 
-    let zeitreisender = new NormaloHacker("Zeitreisender");
-    zeitreisender.sayHello(); // Hallo ich bins der Zeitreisender
+    let zeitreisender = new SimpleHacker("Zeitreisender");
+    zeitreisender.sayHello(); // Hallo ich bin Zeitreisender
 }
 
 
 namespace classes4 {
     interface Hacker {sayHello(): void;}
 
-    class NormaloHacker implements Hacker {
+    class SimpleHacker implements Hacker {
         constructor(private nick: string) { }
         sayHello(): void {
-            console.log("Hallo ich bins der " + this.nick);
+            console.log("Hallo ich bin " + this.nick);
         }
     }
 
-    class Poschi extends NormaloHacker {
+    class Poschi extends SimpleHacker {
         constructor() {
             super("Poschi");
         }
         sayHello(): void {
-            console.log("I bims der Flo");
+            console.log("Grüß Gott ich bin der Flo!");
         }
     }
 
